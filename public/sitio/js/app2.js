@@ -25,16 +25,35 @@
     var drawImage = document.getElementById("draw-image");
     var clearBtn = document.getElementById("draw-clearBtn");
     var submitBtn = document.getElementById("guardar_mant");
-    
-    clearBtn.addEventListener("click", function (e) {
+
+    clearBtn.addEventListener(
+        "click",
+        function (e) {
             // Definimos que pasa cuando el boton draw-clearBtn es pulsado
             clearCanvas();
             drawImage.setAttribute("src", "");
         },
         false
     );
+
+    //Descargar imagen
+    submitBtn.onclick = () => {
+        const enlace = document.createElement("a");
+        // El título
+        enlace.download = "Firma.png";
+        // Convertir la imagen a Base64 y ponerlo en el enlace
+        enlace.href = canvas.toDataURL();
+        // Hacer click en él
+        enlace.click();
+        window.close();
+    };
+
+    window.obtenerImagen = () => {
+        return canvas.toDataURL();
+    };
+
     // Definimos que pasa cuando el boton draw-submitBtn es pulsado
-  /*   submitBtn.addEventListener("click", function (e) {
+    /*   submitBtn.addEventListener("click", function (e) {
 	var dataUrl = canvas.toDataURL();
 	drawText.innerHTML = dataUrl;
 	drawImage.setAttribute("src", dataUrl);

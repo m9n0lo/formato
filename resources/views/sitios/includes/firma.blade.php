@@ -4,6 +4,10 @@
 </canvas>
 <div>
 <input type="submit" class="btn btn-success" value="Limpiar" id="draw-clearBtn">
-<input type="submit" class="btn btn-success" value="Agregar" id="guardar_mant">
+<input type="submit" class="btn btn-success" value="Agregar" id="guardar_mant" >
+
 <div>
+
+
+
 @include('sitios.includes.footer')

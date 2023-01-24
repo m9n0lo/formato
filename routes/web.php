@@ -19,4 +19,7 @@ Route::get('/firma',[FormatoController::class, 'firma']) ->name('firma');
 
 Route::post('/formato/crear',[FormatoController::class, 'GuardarFormato'])->name('formato.insertar');
 
+route::get('/formato/prueba',[FormatoController::class, 'create'])->name('formato.listar');
+
+route::get('/formato/datatable',[FormatoController::class, 'datatable'])->name('formato.data');
 

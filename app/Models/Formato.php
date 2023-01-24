@@ -10,7 +10,7 @@ class Formato extends Model
     use HasFactory;
     protected $primaryKey = 'id';
     protected $fillable = [
-        'nombre_funcionario', 
+        'usuario_id', 
         'nombre_equipo',
         'fecha_mant_est',
         'fecha_retiro',
@@ -18,5 +18,10 @@ class Formato extends Model
         'observaciones',
         'firma'
     ];
+
+    public function usuarios(){
+        return $this->belongsTo(Usuario::class,'usuario_id');
+      }
+
     
 }
