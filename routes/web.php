@@ -15,11 +15,15 @@ use App\Http\Controllers\FormatoController;
 */
 
 Route::get('/', [FormatoController::class, 'index'])->name('index');
-Route::get('/firma',[FormatoController::class, 'firma']) ->name('firma');
 
-Route::post('/formato/crear',[FormatoController::class, 'GuardarFormato'])->name('formato.insertar');
+Route::get('/firma', [FormatoController::class, 'firma'])->name('firma');
 
-route::get('/formato/prueba',[FormatoController::class, 'create'])->name('formato.listar');
+Route::post('/formato/crear', [FormatoController::class, 'GuardarFormato'])->name('formato.insertar');
 
-route::get('/formato/datatable',[FormatoController::class, 'datatable'])->name('formato.data');
+route::get('/formato/prueba', [FormatoController::class, 'create'])->name('formato.listar');
 
+route::get('/formato/datatable', [FormatoController::class, 'datatable'])->name('formato.data');
+
+route::get('/formato/editar/{id}/', [FormatoController::class, 'EditFormat']);
+
+route::post('/formato/update', [FormatoController::class, 'UpdateFormat'])->name('formato.update');

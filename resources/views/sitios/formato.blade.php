@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <html lang="en">
 
 <head>
@@ -115,12 +116,14 @@
                 </div>
 
             </form>
+            <br>
             <div class="row">
 
                 <table id="tabla" class="table table-striped" style="width:100%" data-sort="table">
                     <thead>
                         <tr>
 
+                            {{--  <th>id</th> --}}
                             <th>Nombre Funcionario</th>
                             <th>Nombre Equipo</th>
                             <th>Fecha Mantenimiento</th>
@@ -128,11 +131,12 @@
                             <th>Fecha Entrega</th>
                             <th>Observaciones</th>
                             <th>Firma</th>
-                            
+                            <th>Acciones</th>
+
                         </tr>
                     </thead>
 
-                    <tbody>
+                    {{--  <tbody>
                         @foreach ($for as $f)
                             <tr>
                                 <td>{{ $f->usuarios->nombre_funcionario }}</td>
@@ -146,18 +150,66 @@
                             </tr>
                         @endforeach
         
-                    </tbody>
-                     
+                    </tbody> --}}
+                    <script>
+                        let dataformato = "{{ route('formato.data') }}";
+                        let prueba = "{{ route('formato.update') }}";
+                    </script>
+
                 </table>
             </div>
         </div>
-    </div>
+
+        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="post" id="sample_form" class="form-horizontal">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Add New Record</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="form_result"></span>
+                            
+                            <div class="form-group">
+                                <label>Nombre Equipo: </label>
+                                <input type="text" name="nombre_equipo_m" id="nombre_equipo_m" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha Mantenimiento Estipulada : </label>
+                                <input type="date" name="fecha_mant_est_m" id="fecha_mant_est_m" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha Retiro : </label>
+                                <input type="date" name="fecha_retiro_m" id="fecha_retiro_m" class="form-control" />
+                            </div>
+                            <div class="form-group editpass">
+                                <label>Fecha Entrega: </label>
+                                <input type="date" name="fecha_entrega_m" id="fecha_entrega_m" class="form-control" />
+                            </div>
+                            <div class="form-group editpass">
+                                <label>Observaciones: </label>
+                                <input type="textarea" name="observaciones_m" id="observaciones_m" class="form-control" />
+                            </div>
+                            <input type="hidden" name="action" id="action" value="Add" />
+                            <input type="hidden" name="hidden_id" id="hidden_id" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" name="action_button" id="action_button" value="Add"
+                                class="btn btn-info" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 </body>
 <footer>
-@include('sitios.includes.footer')
+    @include('sitios.includes.footer')
 
 </footer>
 
