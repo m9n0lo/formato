@@ -154,6 +154,7 @@
                     <script>
                         let dataformato = "{{ route('formato.data') }}";
                         let prueba = "{{ route('formato.update') }}";
+                        
                     </script>
 
                 </table>

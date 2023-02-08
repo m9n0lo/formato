@@ -43,8 +43,8 @@
     <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
 
     <script src="{{ asset('sitio/js/globa.js') }}"></script>
-    {{-- <script src="{{ asset('sitio/contextmenu/dist/jquery.contextMenu.js') }}"></script>
-    <script src="{{ asset('sitio/contextmenu/dist/jquery.ui.position.min.js') }}"></script> --}}
+    <script src="{{ asset('sitio/contextmenu/dist/jquery.contextMenu.js') }}"></script>
+    <script src="{{ asset('sitio/contextmenu/dist/jquery.ui.position.min.js') }}"></script>
 
     <title>Inicio | Formato Mantenimiento</title>
     <link rel="shortcut icon" href="{{ asset('sitio/imagenes/logo.jpg') }}">

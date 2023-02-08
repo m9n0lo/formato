@@ -25,14 +25,16 @@ class FormatoController extends Controller
     }
 
     // Funcion que trae los datos para guardar el formato
-    /*  public function create()
+    //SELECT area ,nombre_funcionario FROM usuarios GROUP BY area, nombre_funcionario ORDER BY area ASC ;
+ /*     public function create()
     {
         $users = Usuario::select('area', 'nombre_funcionario')
             ->groupBy('area', 'nombre_funcionario')
             ->get();
-        return view('sitios.includes.prueba', compact('users'));
-    }
- */
+        
+      
+    } */
+
 
     // funcion que insertar los datos obtenidos en los campos a la BD.
     public function GuardarFormato(Request $request)
